@@ -18,11 +18,15 @@
     </bean>
 
     <bean id="classicalMusicBean"
-          class="org.example.ClassicalMusic">
+          class="org.example.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+    >
     </bean>
 
     <bean id="musicPlayer"
-          class="org.example.MusicPlayer" scope="prototype">
+          class="org.example.MusicPlayer"
+          scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="rockMusicBean" />
